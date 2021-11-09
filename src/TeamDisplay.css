@@ -1,10 +1,14 @@
 .team-title{
     color: white;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    background-color: #838383;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
 }
 .member-name{
     color: white;
     font-size: 1rem;
+    padding: 0 1rem;
 }
 
 .team-lists{
@@ -14,7 +18,8 @@
 }
 
 .team-list{
-    flex: 0 0 30%;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    background-color: rgb(54, 54, 54);
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+    min-width: 15rem;
 }

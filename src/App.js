@@ -1,7 +1,6 @@
 import React from "react";
 import './App.css';
 import QuickTeams from './QuickTeams';
-import FullTeams from './FullTeams';
 import GeneratorSetup from "./GeneratorSetup";
 
 class App extends React.Component {
