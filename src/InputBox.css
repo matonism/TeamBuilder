@@ -1,0 +1,14 @@
+.styled-input{
+	border: none;
+	border-radius: 1rem;
+	padding: 0.5rem 1rem;
+}
+.styled-input:focus{
+	outline: none;
+}
+
+.contestant-box{
+	border: none;
+	border-radius: 1rem;
+	padding: 0.5rem 1rem;
+}

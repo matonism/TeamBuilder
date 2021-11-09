@@ -1,0 +1,30 @@
+.pill-option{
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 0.6rem;
+}
+.pill-option:nth-child(n+1){
+    border-left: 1px solid black;
+}
+
+.pill-option:first-child {
+    border-radius: 1rem 0 0 1rem;
+}
+
+.pill-option:last-child {
+    border-radius: 0 1rem 1rem 0;
+}
+
+.pill-option.selected{
+    background-color: cornsilk;
+    color: black;
+}
+
+.toggle-pill-body{
+    color: rgb(255, 255, 255);
+    background-color: rgb(35, 35, 35);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

@@ -1,0 +1,20 @@
+.team-title{
+    color: white;
+    font-size: 2rem;
+}
+.member-name{
+    color: white;
+    font-size: 1rem;
+}
+
+.team-lists{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.team-list{
+    flex: 0 0 30%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}

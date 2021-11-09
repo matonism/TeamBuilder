@@ -1,24 +1,25 @@
 import React from "react";
+import './InputBox.css';
 
 class InputBox extends React.Component {
     constructor(props){
         super(props);
-        this.sendValueChangedEvent = this.sendValueChangedEvent.bind(this);
+        this.state = {
+            value: this.props.value,
+            type: this.props.type ? this.props.type : 'text'
+        };
+        this.valueChangedCallback = this.valueChangedCallback.bind(this);
     }
 
     render(){
-        return (<input class={this.props.class} type="text" name={this.props.name} id="search-term" placeholder={this.props.placeholder} autocomplete="off" onKeyUp={this.sendValueChangedEvent}></input>)
+        return (<input class={this.props.class} type={this.state.type} name={this.props.name} id={this.props.id} placeholder={this.props.placeholder} value={this.state.value} autocomplete="off" onChange={this.valueChangedCallback}></input>)
     }
 
-    sendValueChangedEvent(event){
-        this.props.valueChangedCallback(event);
-        // let newValue = event.target.value;
-        // let valueChangedEvent = new CustomEvent('valuechange', {
-        //     detail: {
-        //         value: newValue
-        //     }
-        // });
-        // this.dispatchEvent(valueChangedEvent);
+    valueChangedCallback(event){
+        this.setState({value: event.target.value});
+        if(this.props.valueChangedCallback){
+            this.props.valueChangedCallback(event);
+        }
         
     }
 }

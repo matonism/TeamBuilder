@@ -1,0 +1,52 @@
+.main-container{
+    background-color: #000000;
+}
+  
+
+.label-text{
+    color:beige;
+}
+
+.pill-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 20%;
+    justify-content: space-around;
+  }
+
+
+  .page-divider{
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .contestant-input{
+      flex-grow: 1;
+      margin: 0.5rem;
+  }
+
+  .right-divide{
+    flex-grow: 3;
+    background-color: gray;
+    margin-left: 1rem;
+    padding-left: 1rem;
+  }
+
+  .contestant-count{
+      text-align: left;
+  }
+
+  .players-per-team{
+      margin-right: 1rem;
+  }
+
+  .players-per-team-settings{
+      display: flex;
+      justify-content: flex-start; 
+        align-items: end;
+  }
+
+  .team-generator-mode{
+      display: flex;
+      margin: 1rem 0;
+  }
