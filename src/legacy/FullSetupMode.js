@@ -1,5 +1,5 @@
 import React from "react";
-import './GeneratorSetup.css';
+import './FullSetupMode.css';
 import InputBox from './InputBox';
 import TeamDisplay from './TeamDisplay';
 import ContestantInputRaw from './ContestantInputRaw';
@@ -7,11 +7,12 @@ import ContestantPill from './ContestantPill';
 import { getTeamsForNumberOfTeams, getTeamsForPlayersPerTeamRoundUp, getTeamsForPlayersPerTeamRoundDown, getTeamsForPlayersPerTeamRoundOddManOut } from './TeamGeneratorHelpers.js';
 import TogglePill from "./TogglePill";
 
-let GENERATOR_MODE_PLAYERS_PER_TEAM = 'Players per Team';
-let GENERATOR_MODE_NUMBER_OF_TEAMS = 'Number of Teams';
+let GENERATOR_MODE_PLAYERS_PER_GROUP = 'Players per Team';
+let GENERATOR_MODE_NUMBER_OF_GROUPS = 'Number of Teams';
+let GENERATOR_MODE_SCHEDULER = 'Scheduler';
 let PLAYERS_PER_TEAM_OPTIONS = ['Round Up', 'Round Down', 'Odd Man Out'];
 
-class GeneratorSetup extends React.Component {
+class FullSetupMode extends React.Component {
 
   constructor(props){
     super(props);
@@ -21,7 +22,7 @@ class GeneratorSetup extends React.Component {
         nextId: 0,
         numberOfTeams: 2,
         playersPerTeam: 2,
-        generatorMode: GENERATOR_MODE_NUMBER_OF_TEAMS,
+        generatorMode: GENERATOR_MODE_NUMBER_OF_GROUPS,
         playersPerTeamOption: 'Round Up'
     };
     this.removeContestant = this.removeContestant.bind(this);
@@ -97,7 +98,7 @@ generateTeams(){
     let teams = [];
     contestantValues = this.shuffle([...contestantValues]);
 
-    if(this.state.generatorMode === GENERATOR_MODE_PLAYERS_PER_TEAM){
+    if(this.state.generatorMode === GENERATOR_MODE_PLAYERS_PER_GROUP){
         if(this.state.playersPerTeamOption === 'Round Down'){
             teams = getTeamsForPlayersPerTeamRoundDown(contestantValues, this.state.playersPerTeam);
         }else if(this.state.playersPerTeamOption === 'Odd Man Out'){
@@ -146,7 +147,7 @@ generateTeams(){
         </div>
     )
 
-    if(this.state.generatorMode === GENERATOR_MODE_PLAYERS_PER_TEAM){
+    if(this.state.generatorMode === GENERATOR_MODE_PLAYERS_PER_GROUP){
         teamSizeInputOption = (
             <div class='players-per-team-settings'>
                 <div class="players-per-team">
@@ -159,13 +160,13 @@ generateTeams(){
     }
 
     return (
-      <div className="GeneratorSetup" class="main-container"> 
+      <div className="FullSetupMode" class="main-container"> 
         <div className="page-divider">
             <div class='contestant-input'>
 
                 <div>
                     <div class="team-generator-mode">     
-                        <TogglePill options={[GENERATOR_MODE_NUMBER_OF_TEAMS, GENERATOR_MODE_PLAYERS_PER_TEAM]} setOption={this.handleGeneratorModeChange}></TogglePill>
+                        <TogglePill options={[GENERATOR_MODE_NUMBER_OF_GROUPS, GENERATOR_MODE_PLAYERS_PER_GROUP, GENERATOR_MODE_SCHEDULER]} setOption={this.handleGeneratorModeChange}></TogglePill>
                     </div>
                     {teamSizeInputOption}
                 </div>
@@ -191,4 +192,4 @@ generateTeams(){
   }
 }
 
-export default GeneratorSetup;
+export default FullSetupMode;

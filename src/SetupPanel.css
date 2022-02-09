@@ -1,0 +1,48 @@
+
+.standout-button{
+	color: rgb(50,50,50);
+	background-color: cornsilk;
+	cursor: pointer;
+	border-radius: 1rem;
+	display: inline-block;
+	padding: 0.5rem 1.5rem;
+	border:none;
+    margin: 0.5rem 0.5rem 0 0;
+}
+
+
+.setup-input{
+    flex-grow: 1;
+    padding: 1.5rem 0.5rem;
+}
+
+
+.label-text{
+    color:beige;
+}
+
+.team-generator-mode{
+    display: flex;
+    margin: 0 0 0 0;
+}
+
+
+.players-per-team{
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+.players-per-team-settings{
+    display: flex;
+    justify-content: flex-start; 
+      align-items: end;
+      flex-flow: wrap;
+}
+
+.players-per-team-pill{
+    padding-top: 1rem;
+}
+
+.number-of-teams{
+    padding-top: 1rem;
+}

@@ -1,6 +1,6 @@
-.contestant-count{
+.field-header{
     color:beige;
-    padding: 1rem 0 0.2rem;
+    padding: 0rem 0 0.2rem;
 }
 
 
@@ -13,4 +13,27 @@
 	padding: 0.5rem 1.5rem;
 	border:none;
     margin: 0.5rem 0.5rem 0 0;
+}
+
+.standard-button{
+	color: white;
+	background-color: rgb(35, 35, 35);
+	cursor: pointer;
+	border-radius: 1rem;
+	display: inline-block;
+	padding: 0.5rem 1.5rem;
+	border:none;
+    margin: 0.5rem 0.5rem 0 0;
+}
+
+.submit-button-container{
+	display: flex;
+	justify-content: end;
+}
+
+.contestant-box{
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	width: 100%;
 }

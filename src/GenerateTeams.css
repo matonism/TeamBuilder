@@ -1,0 +1,66 @@
+.header{
+  display: flex;
+  height: 10vh;
+  justify-content: space-between;
+  background-color: rgb(50, 50, 50);
+  box-shadow: 0 0 .5rem black;
+}
+
+
+.settings-icon-container{
+  height: 100%;
+  background-color: brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.settings-icon{
+  max-height: 3rem;
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+.actions{
+  display: flex;
+}
+
+.add-icon-container{
+  height: 100%;
+  background-color:seagreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-icon{
+  max-height: 2.7rem;
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+.generate-icon-container{
+  height: 100%;
+  background-color:slateblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.generate-icon{
+  max-height: 2.7rem;
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+.contestant-section{
+  height: 80vh;
+  background-color: rgb(150, 150, 150);
+  overflow-y: auto;
+}
+
+.footer{
+  height: 10vh;
+  background-color: rgb(50, 50, 50);
+  box-shadow: 0 0 .5rem black;
+}

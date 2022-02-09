@@ -11,7 +11,7 @@ class TeamDisplay extends React.Component {
         this.props.teams.forEach((team, index) => {
             elements[index] = (
                 <div class="team-list"> 
-                    <div class='team-title'>Team {index + 1}</div>
+                    <div class='team-title'>Group {index + 1}</div>
                     {team.map(member => {
                         return (<div class='member-name'>{member.name}</div>)
                     })}

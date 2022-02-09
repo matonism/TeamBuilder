@@ -19,7 +19,7 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+### `yarn build` -- use this when we want to deploy to S3
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+### Steps to deploy to S3 bucket
+
+https://www.newline.co/fullstack-react/articles/deploying-a-react-app-to-s3/
+
+npm run build in vs code
+create new s3 bucket
+upload all files from new build folder
+ensure the public can read all the files by assigning manual permissions
+enable static website hosting under the bucket's properties
+follow new link generated for static website hosting

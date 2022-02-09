@@ -15,11 +15,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    overflow-y: auto;
 }
 
 .team-list{
     background-color: rgb(54, 54, 54);
     margin: 1rem 0;
     padding-bottom: 1rem;
-    min-width: 15rem;
+    min-width: 10rem;
 }

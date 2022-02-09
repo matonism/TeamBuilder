@@ -12,3 +12,13 @@
 	border-radius: 1rem;
 	padding: 0.5rem 1rem;
 }
+
+
+@media only screen and (max-width: 600px) {
+	.styled-input{
+		border: none;
+		border-radius: 1rem;
+		padding: 0.5rem 1rem;
+		width: 40%;
+	}
+}

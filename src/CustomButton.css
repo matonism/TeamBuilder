@@ -1,0 +1,10 @@
+
+
+.update-button{
+    border-radius: 1rem 0 0 1rem;
+    width: 2rem;
+    height: 100%;
+      cursor: pointer;
+      display: inline-block;
+      border:none;
+  }

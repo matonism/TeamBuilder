@@ -11,7 +11,6 @@ class ContestantInputRaw extends React.Component {
         };
         this.saveContestantName = this.saveContestantName.bind(this);
         this.addAllContestants = this.addAllContestants.bind(this);
-        this.finalizeContestants = this.finalizeContestants.bind(this);
     }
 
     render(){
@@ -20,7 +19,7 @@ class ContestantInputRaw extends React.Component {
         let combinedHTML = [
             (
             <div>
-                <div class="contestant-count">Type names separated by new lines</div>
+                <div class="field-header">Type names separated by new lines</div>
                 <textarea name="contestant-names" value={this.state.rawContestantNames} class="contestant-box" placeholder="Contestant Names separated by space..." rows="8" cols="50" onChange={this.saveContestantName}></textarea>
             </div>
             )
@@ -28,13 +27,12 @@ class ContestantInputRaw extends React.Component {
 
         let addButton = '';
         if(this.props.addAllContestants){
-            addButton = (<button label='add-all-contestants' class='submit-button' onClick={this.addAllContestants}>Add Contestants</button>)
+            addButton = (<button label='add-all-contestants' class='standard-button' onClick={this.addAllContestants}>Quick Add Contestants</button>)
         }
 
         let buttons = (
             <div class="submit-button-container">
                 {addButton}
-                <button label='submit' class='submit-button' onClick={this.finalizeContestants}>Generate Teams</button>
             </div>
         )
 
@@ -64,11 +62,6 @@ class ContestantInputRaw extends React.Component {
             this.setState({contestantNames: {}});
         }
     }
-
-    finalizeContestants(event){
-        this.props.onFinalizedContestants(event, this.state.contestantNames);
-    }
-
     
 }
 

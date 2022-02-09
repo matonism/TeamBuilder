@@ -5,13 +5,26 @@ class TogglePill extends React.Component {
 
   constructor(props){
     super(props);
+    let markedSelected = false;
     let optionObjects = this.props.options.map((option, index) => {
         let optionObject = {label: option, selected: false};
-        if(index === 0){
+        if(option === this.props.value){
             optionObject.selected = true;
+            markedSelected = true;
         }
-        return optionObject
+        return optionObject;
     });
+    
+    if(!markedSelected){
+        optionObjects[0].selected = true;
+    }
+    // let optionObjects = this.props.options.map((option, index) => {
+    //     let optionObject = {label: option, selected: false};
+    //     if(index === 0){
+    //         optionObject.selected = true;
+    //     }
+    //     return optionObject
+    // });
 
     this.state = {
         options: optionObjects
