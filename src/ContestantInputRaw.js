@@ -27,7 +27,7 @@ class ContestantInputRaw extends React.Component {
 
         let addButton = '';
         if(this.props.addAllContestants){
-            addButton = (<button label='add-all-contestants' class='standard-button' onClick={this.addAllContestants}>Quick Add Contestants</button>)
+            addButton = (<button label='add-all-contestants' class='standout-button' onClick={this.addAllContestants}>Add Contestants</button>)
         }
 
         let buttons = (

@@ -13,6 +13,7 @@ import SetupPanel from "./SetupPanel";
 import AddContestantPanel from "./AddContestantPanel";
 import TeamPanel from './TeamPanel';
 import Panel from './Panel';
+import {getLastGroup, setLastGroup} from './StorageHelper_Contestants';
 
 let DEFAULT_GROUP_GENERATOR_MODE = 'Number of Groups';
 
@@ -22,7 +23,7 @@ class GenerateTeams extends React.Component {
         super(props);
         this.state = {
             teamSetup: createTeamSetupObject(DEFAULT_GROUP_GENERATOR_MODE, 2, 2, 'Round Up', []),
-            contestants: [],
+            contestants: getLastGroup() == null ? [] : getLastGroup(),
             displaySetup: false,
             displayAddContestant: false,
             displayTeams: false
@@ -60,7 +61,8 @@ class GenerateTeams extends React.Component {
             nextId++;
         });
 
-        this.setState({"contestants": currentContestants});        
+        this.setState({"contestants": currentContestants});     
+        setLastGroup(currentContestants);   
         teamSetup.setNextId(nextId);
         this.setState({"teamSetup": teamSetup});
     }
@@ -75,6 +77,7 @@ class GenerateTeams extends React.Component {
         });
 
         this.setState({contestants: currentContestants});
+        setLastGroup(currentContestants);
     }
 
     removeContestant(updatedContestant){
@@ -83,6 +86,7 @@ class GenerateTeams extends React.Component {
             return contestant.id !== updatedContestant.id;
         });
         this.setState({contestants: currentContestants});
+        setLastGroup(currentContestants);
     }
 
     generateTeams(){

@@ -1,6 +1,7 @@
 var StorageManager = function(StorageManager){
 	StorageManager.RECENT_NAMES = 'recent-names';
 	StorageManager.RECENT_SETS = 'recent-sets';
+	StorageManager.PREVIOUS_GROUP = 'previous-group';
 	// StorageManager.PUBLIC_KEY = 'public-key';
 	// StorageManager.PRIVATE_KEY = 'private-key';
 	// StorageManager.SERVER_KEY = 'server-key';
@@ -28,12 +29,26 @@ var StorageManager = function(StorageManager){
 	//recentNames = {Mike: {count: 1, timesNotIncluded: 0}}
 	StorageManager.setRecentNames = function(newRecentNames){
 		let recentNames = (!!localStorage.getItem(StorageManager.RECENT_NAMES) ? unescape(localStorage.getItem(StorageManager.RECENT_NAMES)) : null);
-		if(newRecentNames){
-			recentNames 
-			for(recentNames)
-		}
+		// if(newRecentNames){
+		// 	recentNames 
+		// 	for(recentNames)
+		// }
 	}
 
+	StorageManager.setValue = function(key, value){
+		localStorage.setItem(key, value);
+	}
+
+	StorageManager.getValue = function(key){
+		return (!!localStorage.getItem(key) ? localStorage.getItem(key) : null);
+	}
+	StorageManager.getValueAsJSON = function(key){
+		let stringValue = (!!localStorage.getItem(key) ? localStorage.getItem(key) : null);
+		return (stringValue === null) ? null : JSON.parse(stringValue);
+	}
+	StorageManager.setValueFromJSON = function(key, value){
+		localStorage.setItem(key, JSON.stringify(value));
+	}
 	//generic methods
 	//key types = [public-key, private-key, server-key, symmetric-key, session-id]
 	StorageManager.storeKey = function(keyType, key){
@@ -53,3 +68,5 @@ var StorageManager = function(StorageManager){
 	return StorageManager;
 
 }(StorageManager || {});
+
+export default StorageManager;
