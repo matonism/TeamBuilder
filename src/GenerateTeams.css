@@ -52,6 +52,32 @@
   padding: 0 1rem;
   cursor: pointer;
 }
+.save-icon-container{
+  height: 100%;
+  background-color:burlywood;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.save-icon{
+  max-height: 2.7rem;
+  padding: 0 1rem;
+  cursor: pointer;
+}
+.load-icon-container{
+  height: 100%;
+  background-color:coral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.load-icon{
+  max-height: 2.7rem;
+  padding: 0 1rem;
+  cursor: pointer;
+}
 
 .contestant-section{
   height: 80vh;

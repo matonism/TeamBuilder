@@ -11,7 +11,15 @@ class ContestantList extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = {};       
+        this.state = {
+            orderedContestants: this.props.contestants.sort((a,b) => {
+                if(a.name < b.name){
+                    return -1
+                }else{
+                    return 1;
+                }
+            })
+        };       
     }
 
     displayInfoHud(){
